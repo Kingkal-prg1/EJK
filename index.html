@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EJK Hub - Launcher (Enhanced)</title>
     
-    <!-- PWA Manifest Link -->
     <link rel="manifest" href="manifest.json">
     
-    <!-- External Libraries -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Removed redundant particles.js, as a custom one is implemented -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
-        /* 648k is the best? */
+        /* 648k is the best?
+ */
         /* Global & Reset */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Poppins:wght@400;600;800&display.swap');
         :root {
@@ -26,10 +24,12 @@
             --success-color: #22c55e;
             --error-color: #ef4444;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0;
+        }
         
         html, body {
-            height: 100%; overflow-x: hidden;
+            height: 100%;
+            overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             background-color: var(--background-color);
             color: #fff;
@@ -113,7 +113,7 @@
 
         /* Home View Styles */
         #home-view {
-            min-height: calc(100vh - 80px); 
+            min-height: calc(100vh - 80px);
             text-align: center;
         }
         #home-view .welcome-banner {
@@ -451,7 +451,7 @@
         }
         .player-controls .back-btn {
              background: var(--favorite-color);
-             color: #fff;
+            color: #fff;
         }
         .player-controls .back-btn:hover {
             box-shadow: 0 0 10px var(--favorite-color);
@@ -553,7 +553,7 @@
         }
         .admin-form h3 {
              font-size: 1.5rem;
-             color: var(--favorite-color);
+            color: var(--favorite-color);
              margin-bottom: 15px;
              padding-bottom: 5px;
              border-bottom: 2px solid var(--favorite-color);
@@ -600,7 +600,7 @@
         }
         #editForm h3 {
              color: var(--primary-color);
-             border-bottom-color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
         }
 
 
@@ -693,101 +693,125 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0;
+            transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0);
+            }
         }
         @keyframes fadeDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0;
+            transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0);
+            }
         }
         @keyframes pulseGlow {
-            0%, 100% { text-shadow: 0 0 15px #ffffff88, 0 0 30px #ffffff44; }
-            50% { text-shadow: 0 0 25px #ffffffcc, 0 0 60px #ffffff99; }
+            0%, 100% { text-shadow: 0 0 15px #ffffff88, 0 0 30px #ffffff44;
+            }
+            50% { text-shadow: 0 0 25px #ffffffcc, 0 0 60px #ffffff99;
+            }
         }
         @keyframes playerFadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
+            from { opacity: 0;
+            transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1);
+            }
         }
         @keyframes pulseHeart {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.3); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1);
+            }
+            50% { transform: scale(1.3);
+            }
+            100% { transform: scale(1);
+            }
         }
 
         /* Media Queries */
         @media (max-width: 768px) {
-            #home-view .welcome-banner { font-size: 4rem; margin-bottom: 30px; }
-            .home-button-group { flex-direction: column; gap: 15px; }
-            .content-container { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); padding: 0 20px; }
-            .content-container-small { padding: 0 20px; }
-            #admin-view .admin-form-container { flex-direction: column; }
+            #home-view .welcome-banner { font-size: 4rem;
+            margin-bottom: 30px; }
+            .home-button-group { flex-direction: column; gap: 15px;
+            }
+            .content-container { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            padding: 0 20px; }
+            .content-container-small { padding: 0 20px;
+            }
+            #admin-view .admin-form-container { flex-direction: column;
+            }
             
-            .info-modal { flex-direction: column; min-height: 60vh;}
-            .info-nav { flex: none; width: 100%; padding: 10px; border-right: none; border-bottom: 1px solid rgba(0, 255, 255, 0.2); }
-            .info-nav button { padding: 10px 15px; }
-            #infoContentArea { padding: 20px; }
+            .info-modal { flex-direction: column;
+            min-height: 60vh;}
+            .info-nav { flex: none; width: 100%;
+            padding: 10px; border-right: none; border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+            }
+            .info-nav button { padding: 10px 15px;
+            }
+            #infoContentArea { padding: 20px;
+            }
         }
 
     </style>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8241900380607862"
+      crossorigin="anonymous"></script>
 </head>
 <body>
 
-    <!-- Unified Particle System -->
     <canvas id="particle-canvas"></canvas>
     
     <div id="app-container">
         
-        <!-- Tab Navigation Bar -->
         <div class="tab-nav">
             <button class="tab-nav-btn active" data-view="home"><i class="fas fa-home"></i> Home</button>
             <button class="tab-nav-btn" data-view="games"><i class="fas fa-gamepad"></i> Games Hub</button>
+ 
             <button class="tab-nav-btn" data-view="movies"><i class="fas fa-film"></i> Movies Hub</button>
             <button class="tab-nav-btn" data-view="admin"><i class="fas fa-user-shield"></i> Admin Panel</button>
             <button class="tab-nav-btn" data-view="info"><i class="fas fa-chart-bar"></i> Info</button>
         </div>
 
-        <!-- 1. Home View -->
         <div id="home-view" class="app-view active">
-            <!-- NEW: Editable Welcome Message -->
             <h1 class="welcome-banner mt-20" id="welcome-banner" title="Click to edit name">Welcome, User!</h1>
             <div class="home-button-group">
-                <button id="installAppBtn" class="home-action-button" style="display:none;" onclick="handleInstallPrompt()">
+                <button id="installAppBtn" class="home-action-button" style="display:none;"
+                onclick="handleInstallPrompt()">
                     <i class="fas fa-download mr-2"></i> Install App
                 </button>
                 <button class="home-action-button" onclick="changeView('games')">
                     <i class="fas fa-gamepad mr-2"></i> Quick Launch Games
+               
                 </button>
                 <button class="home-action-button" onclick="changeView('movies')">
                     <i class="fas fa-film mr-2"></i> Watch Movies
                 </button>
                 <button class="home-action-button" onclick="showCredits()">
-                    <i class="fas fa-info-circle mr-2"></i> Credits
+                    <i class="fas 
+                fa-info-circle mr-2"></i> Credits
                 </button>
             </div>
             
             <h2 class="section-title"><i class="fas fa-history mr-2"></i> Recently Played</h2>
             <div class="content-container-small" id="recentlyPlayedContainer">
-                 <div class="empty-state">No games played yet. Go play something!</div>
+                 <div class="empty-state">No games played yet.
+                Go play something!</div>
             </div>
 
-            <!-- UPDATED: Title changed -->
             <h2 class="section-title"><i class="fas fa-heart mr-2"></i> My Favorites</h2>
             <div class="content-container-small" id="favoriteGamesContainer">
-                 <!-- UPDATED: Empty state message -->
                  <div class="empty-state">Heart some games or movies to see them here!</div>
             </div>
             
         </div>
 
-        <!-- 2. Games View -->
         <div id="games-view" class="app-view">
             <h2 class="section-title">Games Library</h2>
             <div class="search-bar">
+         
                 <input type="text" id="gameSearchInput" placeholder="Search game titles or descriptions...">
             </div>
             <div class="tabs-container mb-6 flex flex-wrap justify-center gap-2">
                 <button class="tab-btn-game active home-action-button !text-sm !py-2 !px-4 !font-normal" data-category="All">All</button>
                 <button class="tab-btn-game home-action-button !text-sm !py-2 !px-4 !font-normal" data-category="Sports">Sports</button>
+         
                 <button class="tab-btn-game home-action-button !text-sm !py-2 !px-4 !font-normal" data-category="Arcade">Arcade</button>
                 <button class="tab-btn-game home-action-button !text-sm !py-2 !px-4 !font-normal" data-category="Action">Action</button>
                 <button class="tab-btn-game home-action-button !text-sm !py-2 !px-4 !font-normal" data-category="Endless Runner">Endless Runner</button>
@@ -795,57 +819,65 @@
             <div class="content-container" id="gamesContainer"></div>
         </div>
 
-        <!-- 3. Movies View -->
+    
         <div id="movies-view" class="app-view">
             <h2 class="section-title">Movie Library</h2>
             <div class="search-bar">
                 <input type="text" id="movieSearchInput" placeholder="Search movie titles or descriptions...">
             </div>
             <div class="content-container" id="moviesContainer"></div>
+      
         </div>
 
-        <!-- 4. Admin Panel View -->
         <div id="admin-view" class="app-view">
             <h2 class="section-title">Content Management Panel</h2>
-            <p class="text-center mb-10 text-gray-400">Add new games and movies to the hub. Data will be saved locally in your browser.</p>
+            <p class="text-center mb-10 text-gray-400">Add new games and movies to the hub.
+            Data will be saved locally in your browser.</p>
             
             <div class="admin-form-container">
                 
-                <!-- Add Game Form -->
                 <form id="addGameForm" class="admin-form" onsubmit="event.preventDefault(); addContent('game', this);">
+           
                     <h3>Add New Game</h3>
                     <div id="game-error" class="admin-error-message"></div>
                     <div class="form-group">
                         <label for="gameName">Name:</label>
+                     
                         <input type="text" id="gameName" name="name" required>
                     </div>
                     <div class="form-group">
                         <label for="gameDescription">Description:</label>
-                        <textarea id="gameDescription" name="description" rows="3" class="resize-none"></textarea>
+                        <textarea id="gameDescription" name="description" 
+                        rows="3" class="resize-none"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="gameUrl">Game URL:</label>
                         <input type="text" id="gameUrl" name="url" required>
-                    </div>
+    
+                        </div>
                     <div class="form-group">
                         <label for="gameIcon">Icon URL (Image for card):</label>
                         <input type="url" id="gameIcon" name="icon" required>
-                    </div>
+      
+                        </div>
                     <div class="form-group">
                         <label for="gameCategory">Category:</label>
                         <select id="gameCategory" name="category" required>
+             
                             <option value="Sports">Sports</option>
                             <option value="Arcade">Arcade</option>
                             <option value="Action">Action</option>
+                          
                             <option value="Endless Runner">Endless Runner</option>
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <button type="submit" class="home-action-button !text-sm !font-bold">Add Game</button>
+                    <button type="submit" 
+                    class="home-action-button !text-sm !font-bold">Add Game</button> 
                 </form>
 
-                <!-- Add Movie Form -->
-                <form id="addMovieForm" class="admin-form" onsubmit="event.preventDefault(); addContent('movie', this);">
+                <form id="addMovieForm" class="admin-form" onsubmit="event.preventDefault();
+                addContent('movie', this);">
                     <h3>Add New Movie</h3>
                     <div id="movie-error" class="admin-error-message"></div>
                     <div class="form-group">
@@ -868,8 +900,7 @@
                 </form>
             </div>
         </div>
-        
-        <!-- 5. Info View -->
+
         <div id="info-view" class="app-view">
             <h2 class="section-title text-center">Hub Information</h2>
             <div id="info-modal" class="info-modal">
@@ -878,18 +909,17 @@
                         <i class="fas fa-chart-line mr-2"></i> Player Sessions
                     </button>
                     <button class="info-tab-btn" data-tab="owners" onclick="renderInfoModal('owners')">
-                        <i class="fas fa-users mr-2"></i> Owners & Partners
+                        <i class="fas fa-users 
+                    mr-2"></i> Owners & Partners
                     </button>
                 </div>
                 <div id="infoContentArea">
-                    <!-- Dynamic content will be loaded here -->
-                </div>
+                    </div>
             </div>
         </div>
 
-        <!-- Game Information Modal -->
         <div id="gameInfoModal" class="app-modal" onclick="if(event.target.id === 'gameInfoModal') hideGameInfoModal()">
-             <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-content" onclick="event.stopPropagation()">
                 <img id="gameInfoIcon" class="w-24 h-24 object-cover rounded-lg mx-auto mb-4 border-4 border-cyan-500 shadow-lg" alt="Game Icon">
                 <h3 id="gameInfoName" class="text-3xl font-extrabold mb-4"></h3>
                 <div class="game-details text-gray-300">
@@ -901,16 +931,14 @@
                     <button id="modalPlayBtn" class="home-action-button !py-3 !px-6 !text-lg !font-bold">
                         <i class="fas fa-play mr-2"></i> Play Game
                     </button>
-                    <button id="modalFavBtn" class="home-action-button !py-3 !px-6 !text-lg !font-bold !bg-transparent !border-red-500 !text-red-500 hover:!bg-red-500/20 hover:!shadow-red-500/50">
-                        <i class="fas fa-heart mr-2"></i> 
-                        <span id="modalFavText">Add to Favorites</span>
+                    <button id="modalFavBtn" class="home-action-button !py-3 !px-6 !text-lg !font-bold !bg-transparent !border-red-500 !text-red-500 hover:!bg-red-500/20 
+                    hover:!shadow-red-500/50">
+                        <i class="fas fa-heart mr-2"></i> <span id="modalFavText">Add to Favorites</span>
                     </button>
                 </div>
-             </div>
+            </div>
         </div>
 
-
-        <!-- Player Overlay (Unified for Game/Movie) -->
         <div id="media-player">
             <div class="player-controls">
                 <button id="backBtn" class="back-btn"><i class="fas fa-times mr-2"></i> Exit</button>
@@ -920,7 +948,6 @@
             <iframe id="mediaFrame" allowfullscreen></iframe>
         </div>
 
-        <!-- Credits Modal -->
         <div id="credit-modal" class="app-modal" onclick="if(event.target.id === 'credit-modal') hideCredits()">
             <div class="modal-content">
                 <h3>Credits</h3>
@@ -930,18 +957,15 @@
                 <button class="home-action-button w-full mt-4" onclick="hideCredits()">Close</button>
             </div>
         </div>
-        
-        <!-- NEW: Edit Content Modal -->
-        <div id="edit-modal" class="app-modal" onclick="if(event.target.id === 'edit-modal') hideEditModal()">
+
+        <div id="edit-modal" class="app-modal" 
+        onclick="if(event.target.id === 'edit-modal') hideEditModal()">
             <div class="modal-content">
-                 <form id="editForm" onsubmit="event.preventDefault(); handleEditSubmit(this);">
+                <form id="editForm" onsubmit="event.preventDefault(); handleEditSubmit(this);">
                     <h3>Edit Content</h3>
                     <div id="edit-error" class="admin-error-message"></div>
-                    
-                    <!-- Hidden fields to store item context -->
                     <input type="hidden" id="edit-id" name="id">
                     <input type="hidden" id="edit-type" name="type">
-                    
                     <div class="form-group">
                         <label for="edit-name">Name:</label>
                         <input type="text" id="edit-name" name="name" required>
@@ -968,881 +992,889 @@
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <button type="submit" class="home-action-button !text-sm !font-bold">Save Changes</button>
+                    <button type="submit" class="home-action-button !text-sm 
+                    !font-bold">Save Changes</button>
                 </form>
             </div>
         </div>
-        
-        <!-- NEW: Confirmation Modal -->
+
         <div id="confirm-modal" class="app-modal" onclick="if(event.target.id === 'confirm-modal') hideConfirm()">
-             <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-content" onclick="event.stopPropagation()">
                 <h3>Are you sure?</h3>
                 <p id="confirm-message">This action cannot be undone.</p>
                 <div class="confirm-actions">
                     <button id="confirm-btn-no" class="home-action-button btn-secondary">Cancel</button>
                     <button id="confirm-btn-yes" class="home-action-button btn-danger">Confirm</button>
                 </div>
-             </div>
+            </div>
         </div>
-        
-        <!-- NEW: Toast Notification Element -->
+
         <div id="toast-notification"></div>
-        
+
         <div class="footer-text">made by the students, for the students ✨</div>
 
     </div>
 
     <script>
-        // --- INITIAL/FALLBACK DATA ---
-        const initialGames = [
-            { id: "game-1", name: "Basketball Stars", icon: "https://tse1.mm.bing.net/th/id/OIP.RlzsAtxQOGirwBPxPlmeXwHaE6", url: "https://d11jzht7mj96rr.cloudfront.net/games/2024/gm/basketball-stars/index.html", category: "Sports", playCount: 5, description: "Fast-paced 2-on-2 basketball action. Test your skills against the computer or a friend! Great fun for quick breaks." },
-            { id: "game-2", name: "Basket Random", icon: "https://tse3.mm.bing.net/th/id/OIP.0CH4psy303aX_PqXYqbDcQAAAA", url: "https://d11jzht7mj96rr.cloudfront.com/games/2025/construct/320/basket-random-pro/index.html", category: "Sports", playCount: 8, description: "A hilarious and random physics-based basketball game. Control two players and score with unique challenges." },
-            { id: "game-3", name: "Moto X3M Pool Party", icon: "https://tse3.mm.bing.net/th/id/OIP.dRzWkpSxwM2-opITBOdcKQHaE8", url: "https://d11jzht7mj96rr.cloudfront.net/games/2024/gm/moto-x3m-pool-party/index.html", category: "Sports", playCount: 15, description: "Crazy motorbike stunt game with summer-themed levels. Perform flips and tricks to lower your time!" },
-            { id: "game-4", name: "Retro Bowl", icon: "https://codehs.com/uploads/307d981e1178a3ff863f0db0b0d97e75", url: "https://lonewolf454e.github.io/retro-bowl/", category: "Sports", playCount: 20, description: "Manage your American Football team and win the ultimate prize. A simple yet addictive football sim." },
-            { id: "game-5", name: "Capy Clicker", icon: "https://codehs.com/uploads/4e2db92ddcc6fa88e5956dcbf3cb25d9", url: "https://d11jzht7mj96rr.cloudfront.net/games/2023/q2/capy-cutie-clicker/index.html", category: "Arcade", playCount: 5, description: "An idle clicker game where you collect points by clicking a cute capybara. Upgrade your clicks for massive gains!" },
-        ];
+        // --- DATA MANAGEMENT & INITIALIZATION ---
 
-        const initialMovies = [
-            { id: "movie-1", name: "Dune Part 2", poster: "https://codehs.com/uploads/8043fe64a0ca8b261ce7cfa5c761235c", url: "https://www.youtube.com/embed/SY0-Q0b0h8A", description: "The second part of the sci-fi epic saga. Highly anticipated and beautifully filmed. (Trailer link provided due to file size limits)" },
-            { id: "movie-2", name: "Frozen", poster: "https://codehs.com/uploads/19f46757c61797e54a82e807e769addb", url: "https://www.youtube.com/embed/TbWmHj30-3M", description: "The classic Disney animated hit. (Trailer link provided)" },
-            { id: "movie-3", name: "I.T", poster: "https://codehs.com/uploads/169d03314655a406cd061428a27ded75", url: "https://www.youtube.com/embed/a70w20dO7e8", description: "A suspenseful tech thriller. (Trailer link provided)" },
-            { id: "movie-4", name: "Jurassic Park", poster: "https://codehs.com/uploads/33e374e19abcae753770f5f3e17fc659", url: "https://www.youtube.com/embed/lc0Uhd0tTzo", description: "The original dinosaur classic. An adventure 65 million years in the making. (Trailer link provided)" }
-        ];
-        
-        let games = [];
-        let movies = [];
-        let activeAdminMenu = null;
-        let username = 'User'; // NEW: Default username
-
-        // --- LOCAL STORAGE & DATA MANAGEMENT ---
-        let favorites = JSON.parse(localStorage.getItem('ejkFavorites')) || [];
-        let recentlyPlayed = JSON.parse(localStorage.getItem('ejkRecentlyPlayed')) || [];
-        let sessionCount = parseInt(localStorage.getItem('ejkSessionCount')) || 0;
-        
-        let filters = JSON.parse(localStorage.getItem('ejkFilters')) || {
-            gameSearch: '',
-            gameCategory: 'All',
-            movieSearch: '',
-            lastView: 'home'
+        // State variables
+        let username = "User";
+        let contentData = {
+            games: [],
+            movies: []
         };
+        let filters = {
+            lastView: "home",
+            gameCategory: "All"
+        };
+        let installPrompt = null;
+        let adminToolsActive = false;
+        let isEditing = false; // Flag to prevent re-opening admin menu on blur
 
-        function incrementSessionCount() {
-            sessionCount++;
-            localStorage.setItem('ejkSessionCount', sessionCount);
-        }
+        const STORAGE_KEY = 'ejkHubDataV3';
 
-        function saveFilterState() {
-            const gameSearchInput = document.getElementById('gameSearchInput');
-            const movieSearchInput = document.getElementById('movieSearchInput');
-            
-            if (gameSearchInput && movieSearchInput) {
-                filters.gameSearch = gameSearchInput.value;
-                filters.movieSearch = movieSearchInput.value;
-            }
-            filters.lastView = document.querySelector('.app-view.active')?.id.replace('-view', '') || 'home';
-            localStorage.setItem('ejkFilters', JSON.stringify(filters));
-        }
-
-        function loadContentFromStorage() {
-            const storedGames = localStorage.getItem('ejkGames');
-            const storedMovies = localStorage.getItem('ejkMovies');
-
-            games = storedGames ? JSON.parse(storedGames) : initialGames;
-            movies = storedMovies ? JSON.parse(storedMovies) : initialMovies;
-            
-            games.forEach(g => {
-                if (typeof g.playCount !== 'number') { g.playCount = 0; }
-                if (typeof g.description !== 'string') { g.description = 'No description available.'; }
-            });
-            movies.forEach(m => {
-                if (typeof m.description !== 'string') { m.description = 'No description available.'; }
-            });
-            
-            // NEW: Load username
-            username = localStorage.getItem('ejkUsername') || 'User';
-            welcomeBanner.textContent = `Welcome, ${username}!`;
-        }
-
-        function saveContentToStorage() {
-            localStorage.setItem('ejkFavorites', JSON.stringify(favorites));
-            localStorage.setItem('ejkRecentlyPlayed', JSON.stringify(recentlyPlayed));
-            localStorage.setItem('ejkGames', JSON.stringify(games));
-            localStorage.setItem('ejkMovies', JSON.stringify(movies));
-            localStorage.setItem('ejkUsername', username); // NEW: Save username
-            saveFilterState(); 
-        }
-        
-        function toggleFavorite(id, type) {
-            const index = favorites.indexOf(id);
-            if (index > -1) {
-                favorites.splice(index, 1); 
-            } else {
-                favorites.push(id); 
-            }
-            saveContentToStorage();
-            if (type === 'game') {
-                 loadAndRenderGames();
-            } else {
-                 loadAndRenderMovies();
-            }
-            renderHomeContent(); 
-        }
-        
-        function logRecentGame(gameId) {
-            recentlyPlayed = recentlyPlayed.filter(id => id !== gameId);
-            recentlyPlayed.unshift(gameId);
-            recentlyPlayed = recentlyPlayed.slice(0, 5);
-            saveContentToStorage();
-            renderHomeContent();
-        }
-        
-        function getGameData(id) {
-            return games.find(g => g.id === id);
-        }
-        function getMovieData(id) {
-            return movies.find(m => m.id === id);
-        }
-        function getContentData(id, type) {
-            return type === 'game' ? getGameData(id) : getMovieData(id);
-        }
-
-        // --- DOM ELEMENTS ---
-        const tabBtns = document.querySelectorAll('.tab-nav-btn');
-        const views = document.querySelectorAll('.app-view');
+        // DOM elements
         const gamesContainer = document.getElementById('gamesContainer');
         const moviesContainer = document.getElementById('moviesContainer');
+        const recentlyPlayedContainer = document.getElementById('recentlyPlayedContainer');
+        const favoriteGamesContainer = document.getElementById('favoriteGamesContainer');
+        const welcomeBanner = document.getElementById('welcome-banner');
+        const installAppBtn = document.getElementById('installAppBtn');
+        const appViews = document.querySelectorAll('.app-view');
+        const navButtons = document.querySelectorAll('.tab-nav-btn');
         const gameSearchInput = document.getElementById('gameSearchInput');
         const movieSearchInput = document.getElementById('movieSearchInput');
-        const gameTabBtns = document.querySelectorAll('.tab-btn-game');
-        
-        const gameInfoModal = document.getElementById('gameInfoModal');
-        const modalPlayBtn = document.getElementById('modalPlayBtn');
-        const modalFavBtn = document.getElementById('modalFavBtn');
-        
-        const mediaPlayer = document.getElementById('media-player');
+        const toastNotification = document.getElementById('toast-notification');
         const mediaFrame = document.getElementById('mediaFrame');
-        const backBtn = document.getElementById('backBtn');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        
-        const welcomeBanner = document.getElementById('welcome-banner'); // NEW
-        const toast = document.getElementById('toast-notification'); // NEW
-        const confirmModal = document.getElementById('confirm-modal'); // NEW
-        const confirmMessage = document.getElementById('confirm-message'); // NEW
-        const confirmBtnYes = document.getElementById('confirm-btn-yes'); // NEW
-        const confirmBtnNo = document.getElementById('confirm-btn-no'); // NEW
-        const editModal = document.getElementById('edit-modal'); // NEW
-        const editForm = document.getElementById('editForm'); // NEW
-        
-        let currentGamesCategory = filters.gameCategory;
-        let confirmCallback = null; // NEW: Store callback for confirm modal
-
-        // --- NAVIGATION & VIEWS ---
-        function changeView(viewId) {
-            saveFilterState(); 
-            
-            views.forEach(view => view.classList.remove('active'));
-            tabBtns.forEach(btn => btn.classList.remove('active'));
-
-            const targetView = document.getElementById(`${viewId}-view`);
-            targetView.classList.add('active');
-            
-            const targetBtn = document.querySelector(`.tab-nav-btn[data-view="${viewId}"]`);
-            if (targetBtn) {
-                targetBtn.classList.add('active');
-            }
-            
-            // This is handled by the global click listener now
-            // activeAdminMenu = null;
-            // document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
-
-            const isAdminView = viewId === 'admin';
-            document.querySelectorAll('.admin-tools-btn').forEach(btn => {
-                btn.classList.toggle('active', isAdminView);
-            });
-
-            if (viewId === 'home') {
-                renderHomeContent();
-            } else if (viewId === 'games') {
-                loadAndRenderGames(); 
-            } else if (viewId === 'movies') {
-                loadAndRenderMovies(); 
-            } else if (viewId === 'info') {
-                renderInfoModal('player-counter'); 
-            }
-        }
-
-        tabBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                changeView(btn.dataset.view);
-            });
-        });
-        
-        // --- NEW: NOTIFICATION & MODAL FUNCTIONS ---
-        
-        function showToast(message, type = 'success') {
-            toast.textContent = message;
-            toast.className = 'show'; // Remove all other classes first
-            toast.classList.add(type); // Add success or error
-            
-            setTimeout(() => {
-                toast.className = ''; // Hide
-            }, 3000);
-        }
-        
-        function showConfirm(message, callback) {
-            confirmMessage.textContent = message;
-            confirmCallback = callback;
-            confirmModal.style.display = 'flex';
-            
-            confirmBtnYes.onclick = () => {
-                hideConfirm();
-                if (confirmCallback) confirmCallback(true);
-            };
-            confirmBtnNo.onclick = () => {
-                hideConfirm();
-                if (confirmCallback) confirmCallback(false);
-            };
-        }
-        
-        function hideConfirm() {
-            confirmModal.style.display = 'none';
-            confirmCallback = null;
-        }
-
-        function hideEditModal() {
-            editModal.style.display = 'none';
-            editForm.reset();
-            document.getElementById('edit-error').textContent = '';
-        }
-        
-        // --- MODAL FUNCTIONS (Credits & Game Info) ---
-        const creditModal = document.getElementById('credit-modal');
-        function showCredits() { creditModal.style.display = 'flex'; }
-        function hideCredits() { creditModal.style.display = 'none'; }
-        
-        let currentGameDataForModal = null;
-        
-        function showGameInfoModal(item) {
-            currentGameDataForModal = item;
-            
-            document.getElementById('gameInfoIcon').src = item.icon;
-            document.getElementById('gameInfoName').textContent = item.name;
-            document.getElementById('gameInfoCategory').textContent = item.category;
-            document.getElementById('gameInfoPlayCount').textContent = item.playCount;
-            document.getElementById('gameInfoDescription').textContent = item.description || 'No description provided.';
-            
-            const isFav = favorites.includes(item.id);
-            modalFavBtn.classList.toggle('favorited', isFav);
-            // This was a bug, style.borderColor doesn't work on the base class
-            modalFavBtn.classList.toggle('!border-red-500', isFav);
-            modalFavBtn.classList.toggle('!text-red-500', isFav);
-            
-            document.getElementById('modalFavText').textContent = isFav ? 'Remove from Favorites' : 'Add to Favorites';
-            
-            modalPlayBtn.onclick = () => {
-                hideGameInfoModal();
-                openMedia(item, true);
-            };
-            modalFavBtn.onclick = () => {
-                toggleFavorite(item.id, 'game');
-                // Re-fetch item data as it might have changed (though not in this case, good practice)
-                const updatedItem = getGameData(item.id);
-                showGameInfoModal(updatedItem); 
-            };
-            
-            gameInfoModal.style.display = 'flex';
-        }
-        function hideGameInfoModal() {
-            gameInfoModal.style.display = 'none';
-        }
+        const mediaPlayer = document.getElementById('media-player');
+        const gameInfoModal = document.getElementById('gameInfoModal');
+        const infoContentArea = document.getElementById('infoContentArea');
+        const adminToolsButtons = document.querySelectorAll('.admin-tools-btn');
 
 
         // --- PARTICLE SYSTEM ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        
-        class Particle { 
-            constructor(x, y, radius, color) {
+        let mouse = { x: null, y: null, radius: 150 };
+        const particleCount = 70; // Set a reasonable limit
+
+        class Particle {
+            constructor(x, y, directionX, directionY, size, color) {
                 this.x = x;
                 this.y = y;
-                this.radius = radius;
+                this.directionX = directionX;
+                this.directionY = directionY;
+                this.size = size;
                 this.color = color;
-                this.velocity = {
-                    x: (Math.random() - 0.5) * 0.5,
-                    y: (Math.random() - 0.5) * 0.5
-                };
             }
+
             draw() {
                 ctx.beginPath();
-                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
                 ctx.fillStyle = this.color;
                 ctx.fill();
             }
+
             update() {
-                if (this.x + this.radius > canvas.width || this.x - this.radius < 0) {
-                    this.velocity.x = -this.velocity.x;
+                if (this.x + this.size > canvas.width || this.x - this.size < 0) {
+                    this.directionX = -this.directionX;
                 }
-                if (this.y + this.radius > canvas.height || this.y - this.radius < 0) {
-                    this.velocity.y = -this.velocity.y;
+                if (this.y + this.size > canvas.height || this.y - this.size < 0) {
+                    this.directionY = -this.directionY;
                 }
-                this.x += this.velocity.x;
-                this.y += this.velocity.y;
+
+                this.x += this.directionX;
+                this.y += this.directionY;
+
+                this.interact();
                 this.draw();
             }
+
+            interact() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < mouse.radius) {
+                    let forceDirectionX = dx / distance;
+                    let forceDirectionY = dy / distance;
+                    let maxSpeed = 1;
+                    let force = (mouse.radius - distance) / mouse.radius * maxSpeed;
+                    this.x -= forceDirectionX * force;
+                    this.y -= forceDirectionY * force;
+                }
+            }
         }
-        
-        function initParticles() { 
+
+        function initParticles() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             particles = [];
-            const numParticles = Math.floor(canvas.width * canvas.height / 15000); 
-            for (let i = 0; i < numParticles; i++) {
-                const radius = Math.random() * 2 + 1;
-                const x = Math.random() * (canvas.width - radius * 2) + radius;
-                const y = Math.random() * (canvas.height - radius * 2) + radius;
-                const color = 'rgba(0, 255, 255, 0.7)';
-                particles.push(new Particle(x, y, radius, color));
+            for (let i = 0; i < particleCount; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
+                let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
+                let directionX = (Math.random() * 0.4) - 0.2; // -0.2 to 0.2
+                let directionY = (Math.random() * 0.4) - 0.2; // -0.2 to 0.2
+                let color = '#00ffff'; // primary color
+                particles.push(new Particle(x, y, directionX, directionY, size, color));
             }
-        } 
+        }
 
-        let animationId;
-        function animate() { 
-            animationId = requestAnimationFrame(animate);
-            ctx.fillStyle = 'rgba(13, 13, 13, 0.5)'; 
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.fillStyle = 'rgba(13, 13, 13, 0.4)'; // Clear canvas with a trail effect
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            particles.forEach(particle => {
-                particle.update();
-            });
-        } 
-        
-        // --- CARD RENDERER (Generic Helper) ---
-        function createCard(item, isGame, container, index, isSmall = false, searchTerm = '') {
-            const id = item.id;
-            const isFav = favorites.includes(id); // Check favorites for both types
-            const card = document.createElement("div");
-            card.className = "content-card";
-            card.setAttribute('data-id', id);
-            card.setAttribute('data-type', isGame ? 'game' : 'movie');
-            
-            const imgContainerStyle = isSmall ? 'height: 120px;' : (isGame ? 'height: 150px;' : '');
 
-            let heartHtml = `
-                <div class="favorite-btn ${isFav ? 'favorited' : ''}" onclick="event.stopPropagation(); toggleFavorite('${id}', '${isGame ? 'game' : 'movie'}')">
-                    <i class="fas fa-heart"></i>
-                </div>
-            `;
-            
-            let adminHtml = `
-                <div class="admin-tools-btn" onclick="event.stopPropagation(); toggleAdminMenu('${id}', '${isGame ? 'game' : 'movie'}')">
-                    <i class="fas fa-wrench"></i>
-                </div>
-            `;
-            
-            let itemName = item.name;
-            if (searchTerm) {
-                const regex = new RegExp(`(${searchTerm})`, 'gi');
-                itemName = itemName.replace(regex, '<span class="highlight">$1</span>');
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
             }
-
-            card.innerHTML = `
-                <div class="card-img-container" style="${imgContainerStyle}">
-                    ${heartHtml}
-                    ${adminHtml}
-                    <div class="card-overlay"><i class="fa-solid fa-play"></i></div>
-                    <img src="${isGame ? item.icon : item.poster}" alt="${item.name}" onerror="this.onerror=null;this.src='https://placehold.co/200x300/0d0d0d/00ffff?text=Image+Missing';">
-                </div>
-                <h3>${itemName}</h3>
-            `;
-            
-            if (isGame && !isSmall) {
-                card.onclick = () => showGameInfoModal(item); 
-            } else {
-                card.onclick = () => openMedia(item, isGame);
-            }
-            
-            container.appendChild(card);
-            
-            if (!isSmall) {
-                setTimeout(() => { card.classList.add('visible'); }, index * 50);
-            } else {
-                card.classList.add('visible');
-            }
-
-            const currentView = filters.lastView;
-            card.querySelector('.admin-tools-btn').classList.toggle('active', currentView === 'admin');
-        }
-        
-        
-        // --- Admin Tools Menu Logic ---
-        function toggleAdminMenu(id, type) {
-            const card = document.querySelector(`.content-card[data-id="${id}"]`);
-            
-            document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
-            
-            if (activeAdminMenu === id) {
-                activeAdminMenu = null;
-                return;
-            }
-
-            const menu = document.createElement('div');
-            menu.className = 'admin-card-menu';
-            
-            let menuHtml = `
-                <button onclick="editContent('${id}', '${type}')"><i class="fas fa-edit mr-2"></i> Edit Details</button>
-                <button onclick="deleteContent('${id}', '${type}')"><i class="fas fa-trash-alt mr-2"></i> Delete Content</button>
-            `;
-            
-            if (type === 'game') {
-                menuHtml += `
-                    <button onclick="resetPlayCount('${id}')"><i class="fas fa-chart-line mr-2"></i> Reset Play Count</button>
-                `;
-            }
-            
-            menu.innerHTML = menuHtml;
-            card.appendChild(menu);
-            activeAdminMenu = id;
-            
-            setTimeout(() => {
-                document.addEventListener('click', closeAdminMenuGlobally, { once: true });
-            }, 1);
-        }
-        
-        function closeAdminMenuGlobally(event) {
-            if (activeAdminMenu && !event.target.closest('.admin-card-menu')) {
-                 document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
-                 activeAdminMenu = null;
-            }
-        }
-        
-        function resetPlayCount(id) {
-            document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
-            activeAdminMenu = null;
-            
-            const gameIndex = games.findIndex(g => g.id === id);
-            if (gameIndex !== -1) {
-                games[gameIndex].playCount = 0;
-                saveContentToStorage();
-                showToast(`${games[gameIndex].name} play count reset.`);
-                loadAndRenderGames();
-            }
+            connect();
         }
 
-        // --- HOME VIEW CONTENT LOGIC ---
-        function renderHomeContent() {
-            // Render Recently Played
-            const recentGames = recentlyPlayed.map(id => getGameData(id)).filter(g => g);
-            recentlyPlayedContainer.innerHTML = recentGames.length === 0 
-                ? `<div class="empty-state">No games played yet. Go play something!</div>`
-                : '';
-            recentGames.forEach((g, index) => createCard(g, true, recentlyPlayedContainer, index, true));
-
-            // Render Favorite Games (NOW SHOWS MOVIES TOO)
-            const favoriteItems = favorites.map(id => {
-                return getContentData(id, id.startsWith('game') ? 'game' : 'movie');
-            }).filter(i => i);
-            
-            favoriteGamesContainer.innerHTML = favoriteItems.length === 0
-                ? `<div class="empty-state">Heart some games or movies to see them here!</div>`
-                : '';
-            favoriteItems.forEach((item, index) => {
-                 const isGame = item.id.startsWith('game');
-                 createCard(item, isGame, favoriteGamesContainer, index, true)
-            });
-        }
-        
-        // --- GAMES VIEW LOGIC ---
-        function loadAndRenderGames() {
-            gameSearchInput.value = filters.gameSearch;
-            currentGamesCategory = filters.gameCategory;
-            
-            document.querySelectorAll('.tab-btn-game').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.category === currentGamesCategory) {
-                    btn.classList.add('active');
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let distance = ((particles[a].x - particles[b].x) ** 2) + ((particles[a].y - particles[b].y) ** 2);
+                    if (distance < (100 * 100)) {
+                        opacityValue = 1 - (distance / 10000);
+                        ctx.strokeStyle = `rgba(0, 255, 255, ${opacityValue})`;
+                        ctx.lineWidth = 1;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+                    }
                 }
-            });
-            renderGames();
+            }
         }
 
-        function renderGames() {
-            const searchTerm = gameSearchInput.value.toLowerCase();
-            filters.gameSearch = searchTerm; 
-            
-            const filteredGames = games.filter(g => {
-                const inCategory = currentGamesCategory === 'All' || g.category === currentGamesCategory;
-                // NEW: Search description as well
-                const matchesSearch = g.name.toLowerCase().includes(searchTerm) || g.description.toLowerCase().includes(searchTerm);
-                return inCategory && matchesSearch;
-            });
+        // Mouse move event for particle interaction
+        window.addEventListener('mousemove', (event) => {
+            mouse.x = event.x;
+            mouse.y = event.y;
+        });
 
-            gamesContainer.innerHTML = "";
-            filteredGames.forEach((g, index) => createCard(g, true, gamesContainer, index, false, searchTerm));
-            saveFilterState();
-        }
-        
-        gameSearchInput.addEventListener("input", renderGames);
-        
-        gameTabBtns.forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelector('.tab-btn-game.active').classList.remove('active');
-                e.target.classList.add('active');
-                currentGamesCategory = e.target.dataset.category;
-                filters.gameCategory = currentGamesCategory; 
-                renderGames();
-            });
+        // Mouse leave event to stop interaction
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
         });
 
 
-        // --- MOVIES VIEW LOGIC ---
-        function loadAndRenderMovies() {
-            movieSearchInput.value = filters.movieSearch;
-            renderMovies();
-        }
+        // --- LOCAL STORAGE AND DATA HANDLING ---
 
-        function renderMovies() {
-            const searchTerm = movieSearchInput.value.toLowerCase();
-            filters.movieSearch = searchTerm; 
+        const initialGames = [ { id: "game-1", name: "Basketball Stars", icon: "https://tse1.mm.bing.net/th/id/OIP.RlzsAtxQOGirwBPxPlmeXwHaE6", url: "https://d11jzht7mj96rr.cloudfront.net/games/2024/gm/basketball-stars/index.html", category: "Sports", playCount: 5, description: "Fast-paced 2-on-2 basketball action.
+Test your skills against the computer or a friend! Great fun for quick breaks." }, { id: "game-2", name: "Basket Random", icon: "https://tse3.mm.bing.net/th/id/OIP.0CH4psy303aX_PqXYqbDcQAAAA", url: "https://d11jzht7mj96rr.cloudfront.com/games/2025/construct/320/basket-random-pro/index.html", category: "Sports", playCount: 8, description: "A hilarious and random physics-based basketball game.
+Control two players and score with unique challenges." }, { id: "game-3", name: "Moto X3M Pool Party", icon: "https://tse3.mm.bing.net/th/id/OIP.dRzWkpSxwM2-opITBOdcKQHaE8", url: "https://d11jzht7mj96rr.cloudfront.net/games/2024/gm/moto-x3m-pool-party/index.html", category: "Sports", playCount: 15, description: "Crazy motorbike stunt game with summer-themed levels.
+Perform flips and tricks to lower your time!" }, { id: "game-4", name: "Retro Bowl", icon: "https://codehs.com/uploads/307d981e1178a3ff863f0db0b0d97e75", url: "https://lonewolf454e.github.io/retro-bowl/", category: "Sports", playCount: 20, description: "Manage your American Football team and win the ultimate prize.
+A simple yet addictive football sim." }, { id: "game-5", name: "Capy Clicker", icon: "https://codehs.com/uploads/4e2db92ddcc6fa88e5956dcbf3cb25d9", url: "https://d11jzht7mj96rr.cloudfront.net/games/2023/q2/capy-cutie-clicker/index.html", category: "Arcade", playCount: 5, description: "An idle clicker game where you collect points by clicking a cute capybara.
+Upgrade your clicks for massive gains!" }, ]; const initialMovies = [ { id: "movie-1", name: "Dune Part 2", poster: "https://codehs.com/uploads/8043fe64a0ca8b261ce7cfa5c761235c", url: "https://www.youtube.com/embed/SY0-Q0b0h8A", description: "The second part of the sci-fi epic saga.
+Highly anticipated and beautifully filmed. (Trailer link provided due to file size limits)" }, { id: "movie-2", name: "Frozen", poster: "https://codehs.com/uploads/19f46757c61797e54a82e807e769addb", url: "https://www.youtube.com/embed/TbWmHj30-3M", description: "The classic Disney animated hit.
+(Trailer link provided)" }, { id: "movie-3", name: "I.T", poster: "https://codehs.com/uploads/169d03314655a406cd061428a27ded75", url: "https://www.youtube.com/embed/a70w20dO7e8", description: "A suspenseful tech thriller.
+(Trailer link provided)" }, ];
 
-            const filteredMovies = movies.filter(m => {
-                 // NEW: Search description as well
-                return m.name.toLowerCase().includes(searchTerm) || m.description.toLowerCase().includes(searchTerm);
-            });
-
-            moviesContainer.innerHTML = "";
-            filteredMovies.forEach((m, index) => createCard(m, false, moviesContainer, index, false, searchTerm));
-            saveFilterState();
-        }
-        
-        movieSearchInput.addEventListener("input", renderMovies);
-        
-        // --- ADMIN PANEL & CONTENT CRUD LOGIC ---
-        
-        function isValidUrl(string) {
+        function loadContentFromStorage() {
             try {
-                new URL(string);
-                return true;
-            } catch (e) {
-                return false;
-            }
-        }
-
-        function addContent(type, form) {
-            const formData = new FormData(form);
-            const url = formData.get('url');
-            const errorElement = document.getElementById(type + '-error');
-            errorElement.textContent = '';
-
-            if (!isValidUrl(url)) {
-                errorElement.textContent = 'Error: The URL provided is not a valid web address.';
-                return;
-            }
-            if (type === 'game' && !isValidUrl(formData.get('icon'))) {
-                 errorElement.textContent = 'Error: The Game Icon URL is not a valid web address.';
-                return;
-            }
-            if (type === 'movie' && !isValidUrl(formData.get('poster'))) {
-                 errorElement.textContent = 'Error: The Movie Poster URL is not a valid web address.';
-                return;
-            }
-
-            const newEntry = {
-                name: formData.get('name'),
-                description: formData.get('description'),
-                url: url,
-                id: type + '-' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5)
-            };
-            
-            if (type === 'game') {
-                newEntry.icon = formData.get('icon');
-                newEntry.category = formData.get('category');
-                newEntry.playCount = 0; 
-                games.unshift(newEntry);
-            } else if (type === 'movie') {
-                newEntry.poster = formData.get('poster');
-                movies.unshift(newEntry);
-            }
-            
-            saveContentToStorage();
-            showToast(`${newEntry.name} successfully added!`, 'success');
-            
-            form.reset();
-            loadAndRenderGames();
-            loadAndRenderMovies();
-            renderHomeContent();
-        }
-        
-        function deleteContent(id, type) {
-            // NEW: Use custom confirm modal
-            const item = getContentData(id, type);
-            const itemName = item ? item.name : `this ${type}`;
-            
-            showConfirm(`Are you sure you want to delete "${itemName}"? This cannot be undone.`, (confirmed) => {
-                if (confirmed) {
-                    if (type === 'game') {
-                        games = games.filter(g => g.id !== id);
-                        favorites = favorites.filter(favId => favId !== id);
-                        recentlyPlayed = recentlyPlayed.filter(recId => recId !== id);
-                        loadAndRenderGames();
-                    } else {
-                        movies = movies.filter(m => m.id !== id);
-                        favorites = favorites.filter(favId => favId !== id);
-                        loadAndRenderMovies();
-                    }
-                    
-                    saveContentToStorage();
-                    renderHomeContent();
-                    showToast(`"${itemName}" was deleted.`, 'error');
+                const serializedData = localStorage.getItem(STORAGE_KEY);
+                if (serializedData) {
+                    const savedData = JSON.parse(serializedData);
+                    contentData = {
+                        games: savedData.contentData.games || [],
+                        movies: savedData.contentData.movies || []
+                    };
+                    username = savedData.username || "User";
+                    filters = savedData.filters || { lastView: "home", gameCategory: "All" };
                 }
+            } catch (error) {
+                console.error("Error loading data from storage:", error);
+            }
+
+            // Fallback: If no games, use initial data
+            if (contentData.games.length === 0 && initialGames.length > 0) {
+                contentData.games = initialGames.map(item => ({
+                    ...item,
+                    isFavorite: false,
+                    playCount: item.playCount || 0
+                }));
+            }
+            if (contentData.movies.length === 0 && initialMovies.length > 0) {
+                contentData.movies = initialMovies.map(item => ({
+                    ...item,
+                    isFavorite: false
+                }));
+            }
+            
+            welcomeBanner.textContent = `Welcome, ${username}!`;
+        }
+
+        function saveContentToStorage() {
+            try {
+                const dataToSave = {
+                    contentData: contentData,
+                    username: username,
+                    filters: filters
+                };
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(dataToSave));
+            } catch (error) {
+                console.error("Error saving data to storage:", error);
+            }
+        }
+
+        // --- GENERAL UI & VIEW MANAGEMENT ---
+
+        function changeView(viewId) {
+            appViews.forEach(view => {
+                view.classList.remove('active');
             });
-        }
-        
-        // NEW: Full Edit Functionality
-        function editContent(id, type) {
-            const item = getContentData(id, type);
-            if (!item) return;
-
-            const isGame = (type === 'game');
-            
-            // Populate form
-            document.getElementById('edit-id').value = id;
-            document.getElementById('edit-type').value = type;
-            document.getElementById('edit-name').value = item.name;
-            document.getElementById('edit-description').value = item.description;
-            document.getElementById('edit-url').value = item.url;
-            
-            document.getElementById('edit-image-label').textContent = isGame ? 'Icon URL:' : 'Poster URL:';
-            document.getElementById('edit-image-url').value = isGame ? item.icon : item.poster;
-            
-            const categoryGroup = document.getElementById('edit-category-group');
-            categoryGroup.style.display = isGame ? 'block' : 'none';
-            if (isGame) {
-                document.getElementById('edit-category').value = item.category;
-            }
-            
-            editModal.style.display = 'flex';
-            document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
-            activeAdminMenu = null;
-        }
-
-        // NEW: Handle the edit form submission
-        function handleEditSubmit(form) {
-            const formData = new FormData(form);
-            const id = formData.get('id');
-            const type = formData.get('type');
-            const isGame = (type === 'game');
-            const errorElement = document.getElementById('edit-error');
-            errorElement.textContent = '';
-            
-            // Validation
-            const url = formData.get('url');
-            const imageUrl = formData.get('imageUrl');
-            if (!isValidUrl(url)) {
-                errorElement.textContent = 'Error: The Game/Movie URL is not valid.';
-                return;
-            }
-            if (!isValidUrl(imageUrl)) {
-                errorElement.textContent = 'Error: The Icon/Poster URL is not valid.';
-                return;
-            }
-
-            // Find and update item
-            let item;
-            if (isGame) {
-                item = games.find(g => g.id === id);
-                if (item) {
-                    item.name = formData.get('name');
-                    item.description = formData.get('description');
-                    item.url = url;
-                    item.icon = imageUrl;
-                    item.category = formData.get('category');
-                }
-            } else {
-                item = movies.find(m => m.id === id);
-                 if (item) {
-                    item.name = formData.get('name');
-                    item.description = formData.get('description');
-                    item.url = url;
-                    item.poster = imageUrl;
-                }
-            }
-
-            if (item) {
-                saveContentToStorage();
-                hideEditModal();
-                showToast(`${item.name} updated successfully!`, 'success');
-                
-                // Re-render everything
-                loadAndRenderGames();
-                loadAndRenderMovies();
-                renderHomeContent();
-            } else {
-                 errorElement.textContent = 'Error: Could not find item to update.';
-            }
-        }
-
-
-        // --- INFO VIEW LOGIC ---
-        function getMostPlayedGame() {
-            if (games.length === 0) return null;
-            const mostPlayed = games.reduce((max, game) => (game.playCount > (max ? max.playCount : -1) ? game : max), null);
-            return mostPlayed && mostPlayed.playCount > 0 ? mostPlayed : null;
-        }
-
-        function renderPlayerCounter() {
-            const mostPlayed = getMostPlayedGame();
-            const mostPlayedJson = mostPlayed ? JSON.stringify(mostPlayed).replace(/"/g, "'") : null;
-            
-            let mostPlayedHtml = `<p class="text-gray-400 mt-2 text-center">No games have been played yet.</p>`;
-
-            if (mostPlayed) {
-                mostPlayedHtml = `
-                    <div class="mt-4 p-4 border border-blue-500 rounded-xl bg-gray-800 transition-shadow duration-300 hover:shadow-cyan-400/50 hover:shadow-2xl">
-                        <h4 class="text-xl font-bold mb-3 text-blue-400"><i class="fas fa-trophy mr-2"></i> Most Played Game (${mostPlayed.playCount} Visits)</h4>
-                        <div class="flex items-center space-x-4 cursor-pointer p-2 rounded-lg bg-gray-700/50" onclick="showGameInfoModal(${mostPlayedJson})">
-                            <img src="${mostPlayed.icon}" alt="${mostPlayed.name}" class="w-16 h-16 object-cover rounded-md border-2 border-blue-500">
-                            <span class="text-lg font-semibold">${mostPlayed.name} <i class="fas fa-external-link-alt ml-2 text-sm"></i></span>
-                        </div>
-                    </div>
-                `;
-            }
-
-            return `
-                <h3 class="text-2xl font-bold text-center mb-6 text-cyan-400 border-b pb-2 border-cyan-400/50">Player Session Stats</h3>
-                <div class="bg-gray-700 p-6 rounded-xl shadow-lg border-2 border-gray-600">
-                    <p class="text-lg mb-4"><i class="fas fa-users text-cyan-400 mr-3"></i> Total Sessions Recorded:</p>
-                    <p class="text-6xl font-black text-center text-white text-shadow-lg">${sessionCount}</p>
-                </div>
-                ${mostPlayedHtml}
-                <p class="text-xs mt-4 text-gray-500 italic text-center">Note: This tracks page loads/visits on this device. IP address tracking is not possible in this application for security and privacy reasons.</p>
-            `;
-        }
-
-        function renderOwners() {
-            return `
-                <h3 class="text-2xl font-bold text-center mb-6 text-red-400 border-b pb-2 border-red-400/50">Owners & Partners</h3>
-                <div class="space-y-6">
-                    <div class="bg-gray-700 p-4 rounded-lg flex items-center shadow-md border-2 border-red-700">
-                        <i class="fas fa-crown text-yellow-500 text-3xl mr-4"></i>
-                        <div>
-                            <p class="text-xl font-bold text-white">Owner: Kelvin / _648k</p>
-                            <p class="text-sm text-gray-400">The hub creator and lead developer.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="bg-gray-700 p-4 rounded-lg flex items-center shadow-md border-2 border-pink-700">
-                        <img src="https://codehs.com/uploads/b7b0c2a6ef30c436d3b1e8d047f9ea4f" alt="FlipBoi Logo" class="w-12 h-12 object-cover rounded-full mr-4 border-2 border-pink-500">
-                        <div>
-                            <p class="text-xl font-bold text-white">Partner: FlipBoi</p>
-                            <p class="text-sm text-gray-400">Collaborator and content curator.</p>
-                        </div>
-                    </div>
-                </div>
-            `;
-        }
-
-        function renderInfoModal(tabName) {
-            document.querySelectorAll('.info-tab-btn').forEach(btn => {
+            navButtons.forEach(btn => {
                 btn.classList.remove('active');
             });
-            const activeBtn = document.querySelector(`.info-tab-btn[data-tab="${tabName}"]`);
-            if (activeBtn) { activeBtn.classList.add('active'); }
 
+            const targetView = document.getElementById(`${viewId}-view`);
+            if (targetView) {
+                targetView.classList.add('active');
+                
+                // Update navigation button active state
+                const targetNavBtn = document.querySelector(`.tab-nav-btn[data-view="${viewId}"]`);
+                if (targetNavBtn) {
+                    targetNavBtn.classList.add('active');
+                }
 
-            const contentArea = document.getElementById('infoContentArea');
-            contentArea.style.opacity = '0'; 
+                // Update last viewed filter
+                filters.lastView = viewId;
+                saveContentToStorage();
+
+                // Specific view rendering
+                if (viewId === 'games') {
+                    renderContent('game');
+                } else if (viewId === 'movies') {
+                    renderContent('movie');
+                } else if (viewId === 'home') {
+                    renderHomeView();
+                } else if (viewId === 'info') {
+                    // Default to player-counter tab on info view load
+                    renderInfoModal('player-counter');
+                }
+            }
+        }
+
+        function showToast(message, type = 'info') {
+            toastNotification.textContent = message;
+            toastNotification.className = ''; // Reset classes
+            toastNotification.classList.add(type);
+            toastNotification.classList.add('show');
             
             setTimeout(() => {
-                switch (tabName) {
-                    case 'player-counter':
-                        contentArea.innerHTML = renderPlayerCounter();
-                        break;
-                    case 'owners':
-                        contentArea.innerHTML = renderOwners();
-                        break;
-                    default:
-                        contentArea.innerHTML = renderPlayerCounter(); 
-                        break;
-                }
-                contentArea.style.opacity = '1'; 
-            }, 200);
+                toastNotification.classList.remove('show');
+            }, 3000); // Hide after 3 seconds
         }
 
-        // --- MEDIA PLAYER LOGIC (Unified) ---
-        function openMedia(item, isGame) {
-            let mediaUrl = item.url;
+        // --- CARD RENDERING ---
+
+        function createContentCard(item, type) {
+            const card = document.createElement('div');
+            card.className = 'content-card';
+            card.dataset.id = item.id;
+            card.dataset.type = type;
+            card.style.animationDelay = `${Math.random() * 0.5}s`; // Staggered entry
+
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'card-img-container';
+
+            const img = document.createElement('img');
+            img.src = type === 'game' ? item.icon : item.poster;
+            img.alt = item.name;
+
+            const overlay = document.createElement('div');
+            overlay.className = 'card-overlay';
+            overlay.innerHTML = `<i class="fas fa-play"></i>`;
+
+            const title = document.createElement('h3');
+            title.textContent = item.name;
+
+            const favoriteBtn = document.createElement('i');
+            favoriteBtn.className = `favorite-btn fas fa-heart`;
+            if (item.isFavorite) {
+                favoriteBtn.classList.add('favorited');
+            }
+            favoriteBtn.onclick = (e) => {
+                e.stopPropagation(); // Prevent card click
+                toggleFavorite(item.id, type);
+            };
+
+            const adminToolsBtn = document.createElement('i');
+            adminToolsBtn.className = `admin-tools-btn fas fa-ellipsis-v`;
+            adminToolsBtn.onclick = (e) => {
+                e.stopPropagation();
+                toggleAdminMenu(item.id, type, adminToolsBtn);
+            }
+            adminToolsBtn.classList.add('active'); // Always show for simplicity in this demo
+
+            imageContainer.appendChild(img);
+            imageContainer.appendChild(overlay);
+            card.appendChild(imageContainer);
+            card.appendChild(title);
+            card.appendChild(favoriteBtn);
+            card.appendChild(adminToolsBtn);
+
+            card.onclick = () => {
+                if(type === 'game') {
+                    showGameInfoModal(item);
+                } else {
+                    playMedia(item.url, item.id);
+                }
+            };
+
+            // Set to visible after append to trigger staggered animation
+            setTimeout(() => {
+                card.classList.add('visible');
+            }, 10);
+
+            return card;
+        }
+
+        function renderContent(type, search = '', category = 'All') {
+            const container = type === 'game' ? gamesContainer : moviesContainer;
+            container.innerHTML = '';
+            const allItems = type === 'game' ? contentData.games : contentData.movies;
+
+            const filteredItems = allItems.filter(item => {
+                const matchesSearch = search === '' || 
+                                      item.name.toLowerCase().includes(search.toLowerCase()) || 
+                                      item.description.toLowerCase().includes(search.toLowerCase());
+                
+                const matchesCategory = type !== 'game' || category === 'All' || item.category === category;
+
+                return matchesSearch && matchesCategory;
+            });
+
+            if (filteredItems.length === 0) {
+                container.innerHTML = `<div class="empty-state">No ${type}s found matching your criteria.</div>`;
+                return;
+            }
+
+            filteredItems.forEach(item => {
+                container.appendChild(createContentCard(item, type));
+            });
+
+            highlightSearchTerms(container, search);
+        }
+
+        function highlightSearchTerms(container, search) {
+            if (!search) return;
+            const terms = search.toLowerCase().split(' ').filter(t => t.length > 1);
+
+            container.querySelectorAll('h3').forEach(titleElement => {
+                let originalHtml = titleElement.innerHTML;
+                let newHtml = originalHtml;
+                
+                terms.forEach(term => {
+                    // Create a case-insensitive regex for the term
+                    const regex = new RegExp(`(${term})`, 'gi');
+                    // Replace matches with the term wrapped in a highlight span
+                    newHtml = newHtml.replace(regex, '<span class="highlight">$1</span>');
+                });
+
+                titleElement.innerHTML = newHtml;
+            });
+        }
+
+        function renderHomeView() {
+            // Render Recently Played (Top 5)
+            const sortedGames = [...contentData.games].sort((a, b) => b.playCount - a.playCount);
+            const recentlyPlayed = sortedGames.filter(g => g.playCount > 0).slice(0, 5);
+
+            recentlyPlayedContainer.innerHTML = '';
+            if (recentlyPlayed.length === 0) {
+                 recentlyPlayedContainer.innerHTML = `<div class="empty-state">No games played yet. Go play something!</div>`;
+            } else {
+                recentlyPlayed.forEach(item => {
+                    recentlyPlayedContainer.appendChild(createContentCard(item, 'game'));
+                });
+            }
+
+
+            // Render Favorites (Games & Movies)
+            const favoriteItems = [
+                ...contentData.games.filter(g => g.isFavorite).map(g => ({...g, type: 'game'})),
+                ...contentData.movies.filter(m => m.isFavorite).map(m => ({...m, type: 'movie'}))
+            ];
+
+            favoriteGamesContainer.innerHTML = '';
+            if (favoriteItems.length === 0) {
+                favoriteGamesContainer.innerHTML = `<div class="empty-state">Heart some games or movies to see them here!</div>`;
+            } else {
+                favoriteItems.forEach(item => {
+                    favoriteGamesContainer.appendChild(createContentCard(item, item.type));
+                });
+            }
+        }
+
+        // --- INTERACTION FUNCTIONS ---
+
+        function playMedia(url, id) {
+            // Find the item to increment play count if it's a game
+            const item = contentData.games.find(g => g.id === id);
+            if (item) {
+                item.playCount = (item.playCount || 0) + 1;
+                saveContentToStorage();
+            }
+
+            mediaFrame.src = url;
+            mediaPlayer.style.display = 'flex';
+        }
+
+        function exitMedia() {
+            mediaFrame.src = ''; // Stop the media
+            mediaPlayer.style.display = 'none';
+        }
+
+        function toggleFavorite(id, type) {
+            const list = type === 'game' ? contentData.games : contentData.movies;
+            const item = list.find(item => item.id === id);
             
-            if (isGame) {
-                logRecentGame(item.id);
-                const gameIndex = games.findIndex(g => g.id === item.id);
-                if (gameIndex !== -1) {
-                    games[gameIndex].playCount = (games[gameIndex].playCount || 0) + 1;
-                    saveContentToStorage(); 
-                }
-            } else if (item.url.includes("drive.google.com") && !item.url.includes("/preview")) {
-                const fileIdMatch = item.url.match(/\/d\/([a-zA-Z0-9_-]+)/);
-                if (fileIdMatch && fileIdMatch[1]) {
-                    const fileId = fileIdMatch[1];
-                    mediaUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-                }
-            }
+            if (item) {
+                item.isFavorite = !item.isFavorite;
+                saveContentToStorage();
 
-            mediaFrame.src = mediaUrl;
-            mediaPlayer.style.display = "flex";
+                // Re-render the affected views
+                if (filters.lastView === 'home') {
+                    renderHomeView();
+                } else if (filters.lastView === 'games' && type === 'game') {
+                    renderContent('game', gameSearchInput.value, filters.gameCategory);
+                } else if (filters.lastView === 'movies' && type === 'movie') {
+                    renderContent('movie', movieSearchInput.value);
+                }
+
+                showToast(item.isFavorite ? `${item.name} added to favorites!` : `${item.name} removed from favorites.`, 'success');
+            }
         }
 
-        backBtn.onclick = () => {
-            mediaPlayer.style.display = "none";
-            mediaFrame.src = ""; 
-        };
-
-        fullscreenBtn.onclick = () => {
-            const elem = mediaPlayer;
-            if (elem.requestFullscreen) {
-                elem.requestFullscreen();
-            } else if (elem.webkitRequestFullscreen) {
-                elem.webkitRequestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-                elem.msRequestFullscreen();
-            }
-        };
-        
-        // --- PWA INSTALL PROMPT LOGIC ---
-        let deferredInstallPrompt = null;
-        const installAppBtn = document.getElementById('installAppBtn');
+        // --- PWA INSTALLATION ---
 
         window.addEventListener('beforeinstallprompt', (e) => {
+            // Prevent the default browser prompt
             e.preventDefault();
-            deferredInstallPrompt = e;
+            // Stash the event so it can be triggered later.
+            installPrompt = e;
+            // Update UI to show the install button
             installAppBtn.style.display = 'block';
         });
 
         function handleInstallPrompt() {
-            if (deferredInstallPrompt) {
-                deferredInstallPrompt.prompt();
-                deferredInstallPrompt.userChoice.then((choiceResult) => {
-                    if (choiceResult.outcome === 'accepted') {
-                        showToast('App installed successfully!', 'success');
-                    } else {
-                        showToast('App install cancelled.', 'error');
-                    }
-                    deferredInstallPrompt = null;
-                    installAppBtn.style.display = 'none';
-                });
+            if (!installPrompt) return;
+
+            // Show the prompt
+            installPrompt.prompt();
+            // Wait for the user to respond to the prompt
+            installPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the install prompt');
+                } else {
+                    console.log('User dismissed the install prompt');
+                }
+                installPrompt = null;
+                installAppBtn.style.display = 'none'; // Hide button regardless of choice
+            });
+        }
+
+        // --- GAME INFO MODAL ---
+
+        function showGameInfoModal(game) {
+            document.getElementById('gameInfoIcon').src = game.icon;
+            document.getElementById('gameInfoName').textContent = game.name;
+            document.getElementById('gameInfoCategory').textContent = game.category;
+            document.getElementById('gameInfoPlayCount').textContent = game.playCount;
+            document.getElementById('gameInfoDescription').textContent = game.description;
+
+            const modalPlayBtn = document.getElementById('modalPlayBtn');
+            modalPlayBtn.onclick = () => {
+                playMedia(game.url, game.id);
+                hideGameInfoModal();
+            };
+
+            const modalFavBtn = document.getElementById('modalFavBtn');
+            const modalFavText = document.getElementById('modalFavText');
+            modalFavBtn.classList.toggle('favorited', game.isFavorite);
+            modalFavText.textContent = game.isFavorite ? "Remove Favorite" : "Add to Favorites";
+
+            modalFavBtn.onclick = () => {
+                toggleFavorite(game.id, 'game');
+                // Update modal view right away
+                modalFavBtn.classList.toggle('favorited', !game.isFavorite);
+                modalFavText.textContent = !game.isFavorite ? "Remove Favorite" : "Add to Favorites";
+            };
+
+            gameInfoModal.style.display = 'flex';
+        }
+
+        function hideGameInfoModal() {
+            gameInfoModal.style.display = 'none';
+        }
+
+        // --- ADMIN MENU FUNCTIONS (DELETE/EDIT) ---
+        
+        // Closes all admin menus when clicking anywhere else
+        function handleGlobalClick(e) {
+             // If we are currently editing, do nothing
+            if (isEditing) return;
+
+            // Check if the click is outside any admin tool button or menu
+            if (!e.target.closest('.admin-tools-btn') && !e.target.closest('.admin-card-menu')) {
+                document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
+                adminToolsActive = false;
+                document.removeEventListener('click', handleGlobalClick);
+            }
+        }
+
+        function toggleAdminMenu(id, type, button) {
+            // Remove any existing menu first
+            document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove());
+            document.removeEventListener('click', handleGlobalClick);
+
+            // Create the new menu
+            const menu = document.createElement('div');
+            menu.className = 'admin-card-menu';
+            menu.dataset.id = id;
+            menu.dataset.type = type;
+
+            const editBtn = document.createElement('button');
+            editBtn.innerHTML = `<i class="fas fa-edit mr-2"></i> Edit`;
+            editBtn.onclick = (e) => {
+                e.stopPropagation();
+                showEditModal(id, type);
+                menu.remove();
+            };
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.innerHTML = `<i class="fas fa-trash-alt mr-2"></i> Delete`;
+            deleteBtn.onclick = (e) => {
+                e.stopPropagation();
+                showConfirm(
+                    `Are you sure you want to delete **${contentData[type + 's'].find(i => i.id === id).name}**? This cannot be undone.`,
+                    () => deleteContent(id, type)
+                );
+                menu.remove();
+            };
+
+            menu.appendChild(editBtn);
+            menu.appendChild(deleteBtn);
+
+            button.parentElement.appendChild(menu);
+            adminToolsActive = true;
+            
+            // Add global listener to close menu on outside click
+            // Use a timeout to allow the current click event to complete before the listener is active
+            setTimeout(() => {
+                 document.addEventListener('click', handleGlobalClick);
+            }, 10);
+           
+        }
+
+        function deleteContent(id, type) {
+            const list = contentData[type + 's'];
+            const index = list.findIndex(item => item.id === id);
+
+            if (index > -1) {
+                const name = list[index].name;
+                list.splice(index, 1);
+                saveContentToStorage();
+                
+                // Re-render the current view
+                if (type === 'game' && filters.lastView === 'games') {
+                     renderContent('game', gameSearchInput.value, filters.gameCategory);
+                } else if (type === 'movie' && filters.lastView === 'movies') {
+                    renderContent('movie', movieSearchInput.value);
+                } else if (filters.lastView === 'home') {
+                    renderHomeView();
+                }
+
+                showToast(`${name} deleted successfully!`, 'success');
+            }
+        }
+
+        // --- ADMIN FORM SUBMISSION (ADD) ---
+
+        function addContent(type, form) {
+            const list = contentData[type + 's'];
+            const name = form.name.value.trim();
+            const url = form.url.value.trim();
+            const iconOrPoster = type === 'game' ? form.icon.value.trim() : form.poster.value.trim();
+            const description = form.description.value.trim();
+            const category = type === 'game' ? form.category.value : undefined;
+            const errorElement = document.getElementById(`${type}-error`);
+
+            errorElement.textContent = ''; // Clear previous errors
+
+            if (!name || !url || !iconOrPoster) {
+                 errorElement.textContent = 'Name, URL, and Image URL/Poster are required.';
+                 showToast('Please fill out all required fields.', 'error');
+                 return;
+            }
+
+            // Simple check to prevent duplicates
+            if (list.some(item => item.name.toLowerCase() === name.toLowerCase())) {
+                errorElement.textContent = `${name} already exists.`;
+                showToast('Content with this name already exists.', 'error');
+                return;
+            }
+
+            const newItem = {
+                id: `${type}-${Date.now()}`, // Simple unique ID
+                name: name,
+                url: url,
+                description: description,
+                isFavorite: false
+            };
+
+            if (type === 'game') {
+                newItem.icon = iconOrPoster;
+                newItem.category = category;
+                newItem.playCount = 0;
+            } else {
+                newItem.poster = iconOrPoster;
+            }
+
+            list.push(newItem);
+            saveContentToStorage();
+            form.reset(); // Clear form inputs
+            showToast(`${name} added to the hub!`, 'success');
+
+            // Re-render the respective view if active
+            if (filters.lastView === type + 's') {
+                renderContent(type, type === 'game' ? gameSearchInput.value : movieSearchInput.value, filters.gameCategory);
+            }
+        }
+
+
+        // --- EDIT MODAL FUNCTIONS ---
+        const editModal = document.getElementById('edit-modal');
+        const editForm = document.getElementById('editForm');
+        const editCategoryGroup = document.getElementById('edit-category-group');
+
+        function showEditModal(id, type) {
+            isEditing = true;
+            document.querySelectorAll('.admin-card-menu').forEach(menu => menu.remove()); // Close any open menus
+
+            const list = contentData[type + 's'];
+            const item = list.find(i => i.id === id);
+
+            if (!item) {
+                showToast(`Could not find item with ID: ${id}`, 'error');
+                isEditing = false;
+                return;
+            }
+
+            // Set hidden fields
+            document.getElementById('edit-id').value = id;
+            document.getElementById('edit-type').value = type;
+
+            // Populate common fields
+            document.getElementById('edit-name').value = item.name;
+            document.getElementById('edit-description').value = item.description;
+            document.getElementById('edit-url').value = item.url;
+            
+            // Handle type-specific fields
+            const editImageLabel = document.getElementById('edit-image-label');
+            const editImageUrl = document.getElementById('edit-image-url');
+
+            if (type === 'game') {
+                editImageLabel.textContent = 'Icon URL:';
+                editImageUrl.value = item.icon;
+                document.getElementById('edit-category').value = item.category;
+                editCategoryGroup.style.display = 'block';
+            } else { // movie
+                editImageLabel.textContent = 'Poster URL:';
+                editImageUrl.value = item.poster;
+                editCategoryGroup.style.display = 'none';
+            }
+            
+            document.getElementById('edit-error').textContent = '';
+            editModal.style.display = 'flex';
+        }
+        
+        function hideEditModal() {
+            editModal.style.display = 'none';
+            isEditing = false;
+        }
+
+        function handleEditSubmit(form) {
+             const id = form['edit-id'].value;
+             const type = form['edit-type'].value;
+             const list = contentData[type + 's'];
+             const item = list.find(i => i.id === id);
+             const errorElement = document.getElementById('edit-error');
+
+            errorElement.textContent = '';
+             if (!item) {
+                 errorElement.textContent = 'Error: Content not found.';
+                 showToast('Error saving changes.', 'error');
+                 return;
+             }
+             
+             const newName = form['edit-name'].value.trim();
+             const newUrl = form['edit-url'].value.trim();
+             const newImage = form['edit-image-url'].value.trim();
+             
+             if (!newName || !newUrl || !newImage) {
+                 errorElement.textContent = 'Name, URL, and Image URL/Poster are required.';
+                 showToast('Please fill out all required fields.', 'error');
+                 return;
+             }
+
+             // Update the item
+             item.name = newName;
+             item.description = form['edit-description'].value.trim();
+             item.url = newUrl;
+             
+             if (type === 'game') {
+                 item.icon = newImage;
+                 item.category = form['edit-category'].value;
+             } else {
+                 item.poster = newImage;
+             }
+
+             saveContentToStorage();
+             hideEditModal();
+             showToast(`${item.name} updated successfully!`, 'success');
+
+             // Re-render the affected views
+             if (filters.lastView === type + 's') {
+                renderContent(type, type === 'game' ? gameSearchInput.value : movieSearchInput.value, filters.gameCategory);
+             } else if (filters.lastView === 'home') {
+                 renderHomeView();
+             }
+        }
+        
+        // --- CONFIRMATION MODAL ---
+        const confirmModal = document.getElementById('confirm-modal');
+        const confirmMessage = document.getElementById('confirm-message');
+        const confirmBtnYes = document.getElementById('confirm-btn-yes');
+        const confirmBtnNo = document.getElementById('confirm-btn-no');
+
+        function showConfirm(message, onConfirmCallback) {
+            confirmMessage.innerHTML = message;
+            confirmModal.style.display = 'flex';
+
+            confirmBtnYes.onclick = () => {
+                onConfirmCallback();
+                hideConfirm();
+            };
+            
+            confirmBtnNo.onclick = () => {
+                hideConfirm();
+            };
+        }
+
+        function hideConfirm() {
+             confirmModal.style.display = 'none';
+        }
+        
+        // --- INFO MODAL CONTENT ---
+        function renderInfoModal(tab) {
+            const tabs = document.querySelectorAll('.info-tab-btn');
+            tabs.forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.info-tab-btn[data-tab="${tab}"]`).classList.add('active');
+
+            if (tab === 'player-counter') {
+                const totalPlays = contentData.games.reduce((sum, game) => sum + game.playCount, 0);
+                const mostPlayed = [...contentData.games].sort((a, b) => b.playCount - a.playCount)[0];
+
+                let mostPlayedHtml = 'No games have been played yet.';
+                if (mostPlayed && mostPlayed.playCount > 0) {
+                    mostPlayedHtml = `The current **most played game** is **${mostPlayed.name}** with **${mostPlayed.playCount}** sessions.`;
+                }
+
+                infoContentArea.innerHTML = `
+                    <h3 class="text-2xl font-bold mb-4">Player Sessions Statistics</h3>
+                    <div class="space-y-4 text-lg">
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-cyan-500">
+                            Total Game Sessions tracked: <span class="text-3xl font-extrabold text-cyan-400 ml-2">${totalPlays}</span>
+                        </p>
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-cyan-500">
+                            Total Unique Games: <span class="text-xl font-bold text-cyan-400 ml-2">${contentData.games.length}</span>
+                        </p>
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-cyan-500">
+                            ${mostPlayedHtml}
+                        </p>
+                    </div>
+                `;
+            } else if (tab === 'owners') {
+                 infoContentArea.innerHTML = `
+                    <h3 class="text-2xl font-bold mb-4">Owners & Partners</h3>
+                    <div class="space-y-4 text-lg">
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-red-500">
+                            **Owner/Lead Developer:** _648k
+                        </p>
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-red-500">
+                            **Design & Concept:** EJK Community
+                        </p>
+                        <p class="p-3 rounded-lg bg-gray-800 border-l-4 border-red-500">
+                            **Major Contributors:** <ul class="list-disc list-inside ml-4 mt-2 text-sm text-gray-400">
+                                <li>Kevin (Particle System)</li>
+                                <li>The entire EJK Student Body (Testing & Feedback)</li>
+                            </ul>
+                        </p>
+                        <p class="p-3 mt-5 text-sm italic text-gray-400">
+                            This hub is a student-made project, built for educational and recreational purposes within the community.
+                        </p>
+                    </div>
+                `;
             }
         }
         
-        window.addEventListener('appinstalled', () => {
-            installAppBtn.style.display = 'none';
+        function showCredits() {
+            document.getElementById('credit-modal').style.display = 'flex';
+        }
+        
+        function hideCredits() {
+            document.getElementById('credit-modal').style.display = 'none';
+        }
+
+        // --- EVENT LISTENERS ---
+
+        navButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                changeView(btn.dataset.view);
+            });
+        });
+
+        // Search inputs
+        gameSearchInput.addEventListener('input', (e) => {
+            renderContent('game', e.target.value, filters.gameCategory);
+        });
+
+        movieSearchInput.addEventListener('input', (e) => {
+            renderContent('movie', e.target.value);
+        });
+
+        // Game Category Tabs
+        document.getElementById('games-view').addEventListener('click', (e) => {
+            if (e.target.classList.contains('tab-btn-game')) {
+                document.querySelectorAll('.tab-btn-game').forEach(btn => btn.classList.remove('active'));
+                e.target.classList.add('active');
+                filters.gameCategory = e.target.dataset.category;
+                saveContentToStorage();
+                renderContent('game', gameSearchInput.value, filters.gameCategory);
+            }
+        });
+
+        // Media Player controls
+        document.getElementById('backBtn').addEventListener('click', exitMedia);
+        document.getElementById('fullscreenBtn').addEventListener('click', () => {
+             mediaFrame.requestFullscreen();
         });
 
 
-        // --- INITIALIZATION ---
-        document.addEventListener('DOMContentLoaded', () => { 
-             loadContentFromStorage(); 
-             incrementSessionCount(); 
-             initParticles(); 
+        // --- APPLICATION STARTUP ---
+
+        document.addEventListener('DOMContentLoaded', () => {
+             loadContentFromStorage();
+             initParticles();
              animate();
              
              const initialView = filters.lastView;
